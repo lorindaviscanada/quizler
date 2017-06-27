@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let allQuestions = QuestionBank()
+    var questionNumber : Int = 0
     
     
     @IBOutlet weak var questionLabel: UILabel!
@@ -21,8 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstQuestion = allQuestions.list[0]
-        
+        let firstQuestion = allQuestions.list[questionNumber]
         questionLabel.text = firstQuestion.questionText
         
         
@@ -30,7 +30,21 @@ class ViewController: UIViewController {
 
 
     @IBAction func answerPressed(_ sender: AnyObject) {
-  
+        
+        var pickedAnswer : Bool = false
+        
+        if  sender.tag == 1 {
+            pickedAnswer = true
+        }
+        else {
+            pickedAnswer = false
+        }
+        
+        checkAnswer(pickedAnswer: pickedAnswer)
+        
+        nextQuestion()
+        
+    
     }
     
     
@@ -41,11 +55,20 @@ class ViewController: UIViewController {
 
     func nextQuestion() {
         
+        if (questionNumber == allQuestions.list.count-1) {
+            questionLabel.text = "No More questions"
+            
+        }
+        else {
+            questionNumber = questionNumber  + 1
+            questionLabel.text = allQuestions.list[questionNumber].questionText
+        }
     }
     
     
-    func checkAnswer() {
-        
+    func checkAnswer(pickedAnswer : Bool) {
+        //let firstQuestion = allQuestions.list[0]
+    
     }
     
     
