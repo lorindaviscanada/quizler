@@ -152,6 +152,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="FalseButton" destination="T5N-xc-sVz" id="xnS-MO-7Fr"/>
+                        <outlet property="TrueButton" destination="exB-ZS-1U0" id="yTV-bo-sbn"/>
                         <outlet property="progressBar" destination="Dsa-Z7-OdN" id="Jep-Z7-uzr"/>
                         <outlet property="progressLabel" destination="qil-6C-XPA" id="vOI-gf-aRi"/>
                         <outlet property="questionLabel" destination="4GJ-Ce-brK" id="pIn-gm-ACF"/>

@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     @IBOutlet var progressBar: UIView!
     @IBOutlet weak var progressLabel: UILabel!
     
+    @IBOutlet weak var FalseButton: UIButton!
+    @IBOutlet weak var TrueButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,7 +60,8 @@ class ViewController: UIViewController {
         
         if (questionNumber == allQuestions.list.count-1) {
             questionLabel.text = "No More questions"
-            
+            FalseButton.isEnabled = false
+            TrueButton.isEnabled = false
         }
         else {
             questionNumber = questionNumber  + 1
@@ -73,7 +77,11 @@ class ViewController: UIViewController {
     
     
     func startOver() {
-       
+        FalseButton.isEnabled = true
+        TrueButton.isEnabled = true
+        questionNumber = 0
+        nextQuestion() 
+
     }
     
 
